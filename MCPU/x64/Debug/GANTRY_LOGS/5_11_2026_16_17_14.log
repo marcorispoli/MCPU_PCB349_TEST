@@ -1,0 +1,16 @@
+[0][16h:17m:12s:980] SELECTED MONITOR: X0 = 0, Y0 = 0
+[187][16h:17m:13s:167] PROGRAM INITIALIZATION
+[6][16h:17m:13s:173] SYSTEM CONFIGURATION FILE:configuration file not exist: default is created.
+
+[0][16h:17m:13s:173] > configuration file not exist: default is created.
+
+[263][16h:17m:13s:437] CAN OPEN ATTEMPT: 0
+[390][16h:17m:13s:827] DRIVER OPEN
+[4][16h:17m:13s:831] VSCAN API: 1.10.3
+[353][16h:17m:14s:184] VSCAN HARDWARE:  SN=380109533 HwREV=0.1 SwREV=2.0 TYPE=2
+[563][16h:17m:14s:747] VSCAN DRIVER READY
+[12][16h:17m:14s:758] can driver revision:  API:1.10 SW:2.0 HW:0.1
+[118][16h:17m:14s:876] Device Board <25>: thread started: wait run command
+[1][16h:17m:14s:877] pcb initialization ..
+[100][16h:17m:14s:978] Device Board <25>: Module Normal mode
+[1][16h:17m:14s:978] Device Board <25>: Wait Revision

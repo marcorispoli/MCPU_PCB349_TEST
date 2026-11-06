@@ -1,0 +1,47 @@
+  MCPU_MASTER.WINDOWS.IDLE.IdleForm.resources - Embedded, ContainedInManifestFile, 
+  MCPU_MASTER.WINDOWS.MAIN.MainForm.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly MCPU_PCB349_TEST, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Messaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class LogClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    LogClass module : Public, Static
+  Methods:
+    logInFile(String): PrivateScope, Public, Static, HideBySig
+    logClose(): PrivateScope, Public, Static, HideBySig
+Class MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Timers.Timer startupTimer : Public
+    HWND__* window : Public
+    Int32 startupFase : Public
+    Int32 startupSubFase : Public
+    Boolean startupCompleted : Public
+    Boolean startupError : Public
+Class IdleForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Timers.Timer idleTimer : Public
+    Boolean open_status : Public
+  Methods:
+    idleStatusManagement(): PrivateScope, Public, HideBySig
+    initIdleStatus(): PrivateScope, Public, HideBySig
+    open(): PrivateScope, Public, HideBySig
+    close(): PrivateScope, Public, HideBySig

@@ -1,0 +1,18 @@
+File Revision Code
+<REVISION,1>
+
+This is the Gantry Running Mode Definition: NORMAL, DEMO, SYM
+<RUNNING_MODE,NORMAL>
+
+SYM Mode Setting: [1=Run, 0=Sim]: ip, port, autostart, can-driver, generator, tilt, Arm,Body,Vertical,Slide, 301, 302, 303,304,325,326
+<SYM_MODE,127.0.0.1,20000,1,0,0>
+
+Name of the installation
+<INSTALL_NAME,FACTORY INSTALLATION>
+
+The directory reserved for logs 
+<LOG_DIRECTORY,\GANTRY_LOGS,ON>
+
+This is the Debug fetaures
+<DEBUG,OFF,127.0.0.1,20001>
+

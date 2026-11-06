@@ -25,7 +25,7 @@
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>MCPU_MASTER</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>MCPU_TEST_TEMPLATE</ProjectName>
+    <ProjectName>MCPU_PCB349_TEST</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
