@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 
+
 /// \addtogroup OPERMODEDOC
 /// <div style="page-break-after: always;"></div>
 /// 
@@ -140,27 +141,27 @@ private:
 		this->labelDate = (gcnew System::Windows::Forms::Label());
 		this->labelTime = (gcnew System::Windows::Forms::Label());
 		this->mainPanel = (gcnew System::Windows::Forms::Panel());
+		this->CalibrationCurrentOnOff = (gcnew System::Windows::Forms::Label());
 		this->BoardTestLabel = (gcnew System::Windows::Forms::Label());
 		this->mAsPanel = (gcnew System::Windows::Forms::Panel());
+		this->CalibrationCurrentActivationButton = (gcnew System::Windows::Forms::Button());
+		this->label4 = (gcnew System::Windows::Forms::Label());
+		this->label3 = (gcnew System::Windows::Forms::Label());
+		this->AutoCalibrationButton = (gcnew System::Windows::Forms::Button());
+		this->ManualAnodicCalibrationValue = (gcnew System::Windows::Forms::NumericUpDown());
+		this->ManualAnodicCalibrationButton = (gcnew System::Windows::Forms::Button());
+		this->label1 = (gcnew System::Windows::Forms::Label());
+		this->label2 = (gcnew System::Windows::Forms::Label());
+		this->AnodicCurrentLabel = (gcnew System::Windows::Forms::Label());
+		this->AnodicCurrentValue = (gcnew System::Windows::Forms::Label());
 		this->mAsFreqLabel = (gcnew System::Windows::Forms::Label());
 		this->label6 = (gcnew System::Windows::Forms::Label());
 		this->mAsFreqValue = (gcnew System::Windows::Forms::Label());
 		this->QuitButton = (gcnew System::Windows::Forms::PictureBox());
-		this->AnodicCurrentLabel = (gcnew System::Windows::Forms::Label());
-		this->AnodicCurrentValue = (gcnew System::Windows::Forms::Label());
-		this->label1 = (gcnew System::Windows::Forms::Label());
-		this->label2 = (gcnew System::Windows::Forms::Label());
-		this->ManualAnodicCalibrationButton = (gcnew System::Windows::Forms::Button());
-		this->ManualAnodicCalibrationValue = (gcnew System::Windows::Forms::NumericUpDown());
-		this->AutoCalibrationButton = (gcnew System::Windows::Forms::Button());
-		this->label3 = (gcnew System::Windows::Forms::Label());
-		this->label4 = (gcnew System::Windows::Forms::Label());
-		this->CalibrationCurrentActivationButton = (gcnew System::Windows::Forms::Button());
-		this->CalibrationCurrentOnOff = (gcnew System::Windows::Forms::Label());
 		this->mainPanel->SuspendLayout();
 		this->mAsPanel->SuspendLayout();
-		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->QuitButton))->BeginInit();
 		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ManualAnodicCalibrationValue))->BeginInit();
+		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->QuitButton))->BeginInit();
 		this->SuspendLayout();
 		// 
 		// labelDate
@@ -199,6 +200,19 @@ private:
 		this->mainPanel->Size = System::Drawing::Size(599, 800);
 		this->mainPanel->TabIndex = 14;
 		// 
+		// CalibrationCurrentOnOff
+		// 
+		this->CalibrationCurrentOnOff->BackColor = System::Drawing::Color::Maroon;
+		this->CalibrationCurrentOnOff->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->CalibrationCurrentOnOff->ForeColor = System::Drawing::Color::White;
+		this->CalibrationCurrentOnOff->Location = System::Drawing::Point(219, 344);
+		this->CalibrationCurrentOnOff->Name = L"CalibrationCurrentOnOff";
+		this->CalibrationCurrentOnOff->Size = System::Drawing::Size(40, 26);
+		this->CalibrationCurrentOnOff->TabIndex = 25;
+		this->CalibrationCurrentOnOff->Text = L"OFF";
+		this->CalibrationCurrentOnOff->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+		// 
 		// BoardTestLabel
 		// 
 		this->BoardTestLabel->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -232,6 +246,127 @@ private:
 		this->mAsPanel->Name = L"mAsPanel";
 		this->mAsPanel->Size = System::Drawing::Size(254, 328);
 		this->mAsPanel->TabIndex = 14;
+		// 
+		// CalibrationCurrentActivationButton
+		// 
+		this->CalibrationCurrentActivationButton->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold,
+			System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+		this->CalibrationCurrentActivationButton->Location = System::Drawing::Point(7, 275);
+		this->CalibrationCurrentActivationButton->Name = L"CalibrationCurrentActivationButton";
+		this->CalibrationCurrentActivationButton->Size = System::Drawing::Size(189, 26);
+		this->CalibrationCurrentActivationButton->TabIndex = 24;
+		this->CalibrationCurrentActivationButton->Text = L"CALIBRATION CURRENT";
+		this->CalibrationCurrentActivationButton->UseVisualStyleBackColor = true;
+		this->CalibrationCurrentActivationButton->Click += gcnew System::EventHandler(this, &IdleForm::CalibrationCurrentActivationButton_Click);
+		// 
+		// label4
+		// 
+		this->label4->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->label4->ForeColor = System::Drawing::Color::Aqua;
+		this->label4->Location = System::Drawing::Point(5, 216);
+		this->label4->Name = L"label4";
+		this->label4->Size = System::Drawing::Size(237, 24);
+		this->label4->TabIndex = 23;
+		this->label4->Text = L"Internal mA Calibration";
+		this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+		// 
+		// label3
+		// 
+		this->label3->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->label3->ForeColor = System::Drawing::Color::Aqua;
+		this->label3->Location = System::Drawing::Point(5, 154);
+		this->label3->Name = L"label3";
+		this->label3->Size = System::Drawing::Size(237, 24);
+		this->label3->TabIndex = 22;
+		this->label3->Text = L"Real mA Calibration";
+		this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+		// 
+		// AutoCalibrationButton
+		// 
+		this->AutoCalibrationButton->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->AutoCalibrationButton->Location = System::Drawing::Point(7, 243);
+		this->AutoCalibrationButton->Name = L"AutoCalibrationButton";
+		this->AutoCalibrationButton->Size = System::Drawing::Size(235, 26);
+		this->AutoCalibrationButton->TabIndex = 21;
+		this->AutoCalibrationButton->Text = L"AUTO CALIBRATION";
+		this->AutoCalibrationButton->UseVisualStyleBackColor = true;
+		// 
+		// ManualAnodicCalibrationValue
+		// 
+		this->ManualAnodicCalibrationValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->ManualAnodicCalibrationValue->Location = System::Drawing::Point(163, 181);
+		this->ManualAnodicCalibrationValue->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 200, 0, 0, 0 });
+		this->ManualAnodicCalibrationValue->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
+		this->ManualAnodicCalibrationValue->Name = L"ManualAnodicCalibrationValue";
+		this->ManualAnodicCalibrationValue->Size = System::Drawing::Size(79, 26);
+		this->ManualAnodicCalibrationValue->TabIndex = 20;
+		this->ManualAnodicCalibrationValue->TabStop = false;
+		this->ManualAnodicCalibrationValue->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+		this->ManualAnodicCalibrationValue->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
+		// 
+		// ManualAnodicCalibrationButton
+		// 
+		this->ManualAnodicCalibrationButton->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->ManualAnodicCalibrationButton->Location = System::Drawing::Point(7, 181);
+		this->ManualAnodicCalibrationButton->Name = L"ManualAnodicCalibrationButton";
+		this->ManualAnodicCalibrationButton->Size = System::Drawing::Size(150, 26);
+		this->ManualAnodicCalibrationButton->TabIndex = 19;
+		this->ManualAnodicCalibrationButton->Text = L"MANUAL CAL.";
+		this->ManualAnodicCalibrationButton->UseVisualStyleBackColor = true;
+		// 
+		// label1
+		// 
+		this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->label1->ForeColor = System::Drawing::Color::Aqua;
+		this->label1->Location = System::Drawing::Point(3, 101);
+		this->label1->Name = L"label1";
+		this->label1->Size = System::Drawing::Size(193, 24);
+		this->label1->TabIndex = 18;
+		this->label1->Text = L"Calibrated Frequency (100mA)";
+		this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+		// 
+		// label2
+		// 
+		this->label2->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->label2->ForeColor = System::Drawing::Color::White;
+		this->label2->Location = System::Drawing::Point(170, 101);
+		this->label2->Name = L"label2";
+		this->label2->Size = System::Drawing::Size(72, 24);
+		this->label2->TabIndex = 17;
+		this->label2->Text = L"----";
+		this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+		// 
+		// AnodicCurrentLabel
+		// 
+		this->AnodicCurrentLabel->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->AnodicCurrentLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+		this->AnodicCurrentLabel->Location = System::Drawing::Point(3, 77);
+		this->AnodicCurrentLabel->Name = L"AnodicCurrentLabel";
+		this->AnodicCurrentLabel->Size = System::Drawing::Size(161, 24);
+		this->AnodicCurrentLabel->TabIndex = 16;
+		this->AnodicCurrentLabel->Text = L"Anodic Current (mA)";
+		this->AnodicCurrentLabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+		// 
+		// AnodicCurrentValue
+		// 
+		this->AnodicCurrentValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->AnodicCurrentValue->ForeColor = System::Drawing::Color::White;
+		this->AnodicCurrentValue->Location = System::Drawing::Point(170, 77);
+		this->AnodicCurrentValue->Name = L"AnodicCurrentValue";
+		this->AnodicCurrentValue->Size = System::Drawing::Size(72, 24);
+		this->AnodicCurrentValue->TabIndex = 15;
+		this->AnodicCurrentValue->Text = L"----";
+		this->AnodicCurrentValue->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 		// 
 		// mAsFreqLabel
 		// 
@@ -282,139 +417,6 @@ private:
 		this->QuitButton->TabStop = false;
 		this->QuitButton->Click += gcnew System::EventHandler(this, &IdleForm::QuitButton_Click);
 		// 
-		// AnodicCurrentLabel
-		// 
-		this->AnodicCurrentLabel->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->AnodicCurrentLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-			static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
-		this->AnodicCurrentLabel->Location = System::Drawing::Point(3, 77);
-		this->AnodicCurrentLabel->Name = L"AnodicCurrentLabel";
-		this->AnodicCurrentLabel->Size = System::Drawing::Size(161, 24);
-		this->AnodicCurrentLabel->TabIndex = 16;
-		this->AnodicCurrentLabel->Text = L"Anodic Current (mA)";
-		this->AnodicCurrentLabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-		// 
-		// AnodicCurrentValue
-		// 
-		this->AnodicCurrentValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->AnodicCurrentValue->ForeColor = System::Drawing::Color::White;
-		this->AnodicCurrentValue->Location = System::Drawing::Point(170, 77);
-		this->AnodicCurrentValue->Name = L"AnodicCurrentValue";
-		this->AnodicCurrentValue->Size = System::Drawing::Size(72, 24);
-		this->AnodicCurrentValue->TabIndex = 15;
-		this->AnodicCurrentValue->Text = L"----";
-		this->AnodicCurrentValue->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-		// 
-		// label1
-		// 
-		this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->label1->ForeColor = System::Drawing::Color::Aqua;
-		this->label1->Location = System::Drawing::Point(3, 101);
-		this->label1->Name = L"label1";
-		this->label1->Size = System::Drawing::Size(193, 24);
-		this->label1->TabIndex = 18;
-		this->label1->Text = L"Calibrated Frequency (100mA)";
-		this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-		// 
-		// label2
-		// 
-		this->label2->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->label2->ForeColor = System::Drawing::Color::White;
-		this->label2->Location = System::Drawing::Point(170, 101);
-		this->label2->Name = L"label2";
-		this->label2->Size = System::Drawing::Size(72, 24);
-		this->label2->TabIndex = 17;
-		this->label2->Text = L"----";
-		this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-		// 
-		// ManualAnodicCalibrationButton
-		// 
-		this->ManualAnodicCalibrationButton->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->ManualAnodicCalibrationButton->Location = System::Drawing::Point(7, 181);
-		this->ManualAnodicCalibrationButton->Name = L"ManualAnodicCalibrationButton";
-		this->ManualAnodicCalibrationButton->Size = System::Drawing::Size(150, 26);
-		this->ManualAnodicCalibrationButton->TabIndex = 19;
-		this->ManualAnodicCalibrationButton->Text = L"MANUAL CAL.";
-		this->ManualAnodicCalibrationButton->UseVisualStyleBackColor = true;
-		// 
-		// ManualAnodicCalibrationValue
-		// 
-		this->ManualAnodicCalibrationValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->ManualAnodicCalibrationValue->Location = System::Drawing::Point(163, 181);
-		this->ManualAnodicCalibrationValue->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 200, 0, 0, 0 });
-		this->ManualAnodicCalibrationValue->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
-		this->ManualAnodicCalibrationValue->Name = L"ManualAnodicCalibrationValue";
-		this->ManualAnodicCalibrationValue->Size = System::Drawing::Size(79, 26);
-		this->ManualAnodicCalibrationValue->TabIndex = 20;
-		this->ManualAnodicCalibrationValue->TabStop = false;
-		this->ManualAnodicCalibrationValue->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-		this->ManualAnodicCalibrationValue->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
-		// 
-		// AutoCalibrationButton
-		// 
-		this->AutoCalibrationButton->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->AutoCalibrationButton->Location = System::Drawing::Point(7, 243);
-		this->AutoCalibrationButton->Name = L"AutoCalibrationButton";
-		this->AutoCalibrationButton->Size = System::Drawing::Size(235, 26);
-		this->AutoCalibrationButton->TabIndex = 21;
-		this->AutoCalibrationButton->Text = L"AUTO CALIBRATION";
-		this->AutoCalibrationButton->UseVisualStyleBackColor = true;
-		// 
-		// label3
-		// 
-		this->label3->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->label3->ForeColor = System::Drawing::Color::Aqua;
-		this->label3->Location = System::Drawing::Point(5, 154);
-		this->label3->Name = L"label3";
-		this->label3->Size = System::Drawing::Size(237, 24);
-		this->label3->TabIndex = 22;
-		this->label3->Text = L"Real mA Calibration";
-		this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-		// 
-		// label4
-		// 
-		this->label4->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->label4->ForeColor = System::Drawing::Color::Aqua;
-		this->label4->Location = System::Drawing::Point(5, 216);
-		this->label4->Name = L"label4";
-		this->label4->Size = System::Drawing::Size(237, 24);
-		this->label4->TabIndex = 23;
-		this->label4->Text = L"Internal mA Calibration";
-		this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-		// 
-		// CalibrationCurrentActivationButton
-		// 
-		this->CalibrationCurrentActivationButton->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Bold,
-			System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-		this->CalibrationCurrentActivationButton->Location = System::Drawing::Point(7, 275);
-		this->CalibrationCurrentActivationButton->Name = L"CalibrationCurrentActivationButton";
-		this->CalibrationCurrentActivationButton->Size = System::Drawing::Size(189, 26);
-		this->CalibrationCurrentActivationButton->TabIndex = 24;
-		this->CalibrationCurrentActivationButton->Text = L"CALIBRATION CURRENT";
-		this->CalibrationCurrentActivationButton->UseVisualStyleBackColor = true;
-		// 
-		// CalibrationCurrentOnOff
-		// 
-		this->CalibrationCurrentOnOff->BackColor = System::Drawing::Color::Maroon;
-		this->CalibrationCurrentOnOff->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->CalibrationCurrentOnOff->ForeColor = System::Drawing::Color::White;
-		this->CalibrationCurrentOnOff->Location = System::Drawing::Point(219, 344);
-		this->CalibrationCurrentOnOff->Name = L"CalibrationCurrentOnOff";
-		this->CalibrationCurrentOnOff->Size = System::Drawing::Size(40, 26);
-		this->CalibrationCurrentOnOff->TabIndex = 25;
-		this->CalibrationCurrentOnOff->Text = L"OFF";
-		this->CalibrationCurrentOnOff->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-		// 
 		// IdleForm
 		// 
 		this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(60)),
@@ -430,8 +432,8 @@ private:
 		this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
 		this->mainPanel->ResumeLayout(false);
 		this->mAsPanel->ResumeLayout(false);
-		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->QuitButton))->EndInit();
 		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ManualAnodicCalibrationValue))->EndInit();
+		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->QuitButton))->EndInit();
 		this->ResumeLayout(false);
 		this->PerformLayout();
 
@@ -452,5 +454,6 @@ private:
 		exit(0);
 	}
 
+	private: System::Void CalibrationCurrentActivationButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 

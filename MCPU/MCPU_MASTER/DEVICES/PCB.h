@@ -18,7 +18,8 @@ public:
 		public:
 
 			enum class register_index {
-				SYSTEM_STATUS_IDX = 0, //!< This is the Collimator internal status    
+				SYSTEM_STATUS_IDX = 0,  
+				MAS_TEST_STATUS_IDX,
 				NUM_REGISTERS
 			};
 
@@ -26,11 +27,8 @@ public:
 
 			static bool decodeSystemStatusRegister(Register^ sys) {
 				if (sys == nullptr) return false;
-				
+				anodic_test_current_activated = (sys->d0 & 0x1) ? true : false;
 
-				/*
-				* enable_contactor = (sys->d1 & 0x1) ? true : false;
-				*/
 				
 				return true;
 			}
@@ -41,16 +39,46 @@ public:
 				CanDeviceProtocol::Register^ sys = gcnew CanDeviceProtocol::Register;
 
 				// Byte 0 of the register
-				//sys->d0 = ((unsigned char) temperature);
+				sys->d0 = 0;
+				if(anodic_test_current_activated) sys->d0 |= 1;
 				
+				
+				// Returns the formatted register
+				return sys;
+			}
+
+			static bool decodeMasTestStatusRegister(Register^ sys) {
+				if (sys == nullptr) return false;
+				anodic_test_current = (unsigned short)sys->d0 + (unsigned short)256 * sys->d1;
+				mas_test_pulses = (unsigned short)sys->d2 + (unsigned short)256 * sys->d3;
+
+				return true;
+			}
+
+			Register^ encodeMasTestStatusRegister(void) {
+
+				// Creates a register with all bytes set to 0
+				CanDeviceProtocol::Register^ sys = gcnew CanDeviceProtocol::Register;
+
+				
+				sys->d0 = anodic_test_current;
+				sys->d1 = anodic_test_current>>8;
+
+				sys->d2 = mas_test_pulses;
+				sys->d3 = mas_test_pulses >> 8;
+
 
 				// Returns the formatted register
 				return sys;
 			}
 
-
 			
-			static unsigned char temperature;
+			// mAsmeter related parameters
+			static bool			   anodic_test_current_activated = false;
+			static unsigned short  anodic_test_current = 0;
+			static unsigned short  mas_test_pulses = 0;
+
+
 			
 		};
 
@@ -59,9 +87,32 @@ public:
 		public:
 
 			enum class register_index {
+				SYSTEM_DATA_IDX = 0, 
 				NUM_REGISTERS = 0,
 			};
 
+			Register^ encodeSystemDataRegister(void) {
+
+				// Creates a register with all bytes set to 0
+				CanDeviceProtocol::Register^ sys = gcnew CanDeviceProtocol::Register;
+
+				
+				if(activate_mas_test_current) sys->d0 |= 0x1;
+
+				
+				return sys;
+			}
+
+			static bool decodeSystemDataRegister(Register^ sys) {
+				if (sys == nullptr) return false;
+				
+				activate_mas_test_current = (sys->d0 & 0x1) ? true : false;
+
+
+				return true;
+			}
+
+			static bool activate_mas_test_current = false;
 		};
 
 		ref class ParameterRegister {
@@ -143,7 +194,10 @@ public:
 public:
 	/// \ingroup PCB_Interface
 	///@{
-	
+	static bool activateMasTestCurrent(bool stat);
+	static bool getMasTestCurrentStatus(void);
+	static unsigned short getMasCalibPulses(void);
+	static unsigned short getMasCalibCurrent(void);
 	
 	///@}
 };
