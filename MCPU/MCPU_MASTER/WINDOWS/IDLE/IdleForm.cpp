@@ -136,20 +136,29 @@ void IdleForm::idleStatusManagement(void) {
 	
 	labelTime->Text = date.Hour + ":" + date.Minute + ":" + date.Second;
 
-
-	// Evaluates the status of the mAsmeter panel
-	if (PCB::getMasTestCurrentStatus()) {
-		CalibrationCurrentOnOff->Text = "ON";
-		mAsFreqValue->Text = ""+PCB::getMasCalibPulses();
-		AnodicCurrentValue->Text = ""+PCB::getMasCalibCurrent();
-
-	}
-	else {
-		CalibrationCurrentOnOff->Text = "OFF";
+	if (PCB::getMasAutocalibrationStatus()) {
+		CalibrationCurrentOnOff->Text = "CAL";
 		mAsFreqValue->Text = "----";
 		AnodicCurrentValue->Text = "----";
 	}
-	
+	else {
+		// Evaluates the status of the mAsmeter panel
+		if (PCB::getMasTestCurrentStatus()) {
+			CalibrationCurrentOnOff->Text = "ON";
+			mAsFreqValue->Text = "" + PCB::getMasTestPulses();
+			AnodicCurrentValue->Text = "" + PCB::getMasTestCurrent();
+
+		}
+		else {
+			CalibrationCurrentOnOff->Text = "OFF";
+			mAsFreqValue->Text = "----";
+			AnodicCurrentValue->Text = "----";
+		}
+
+	}
+	CalibtrationCurrentValue->Text = "" + PCB::getMasCalibCurrent();
+	CalibrationTimeValue->Text = "" + (PCB::getMasCalib10msTime()* 10);
+	CalibrationPulsesValue->Text = "" + PCB::getMasCalibPulses();
 
 }
 
@@ -196,4 +205,8 @@ System::Void IdleForm::CalibrationCurrentActivationButton_Click(System::Object^ 
 
 	// Toggles the current status of the mas test 
 	PCB::activateMasTestCurrent(!PCB::getMasTestCurrentStatus());
+}
+
+System::Void IdleForm::AutoCalibrationButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	PCB::ExecuteAutoCalbration();
 }

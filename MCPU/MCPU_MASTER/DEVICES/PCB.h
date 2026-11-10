@@ -28,7 +28,7 @@ public:
 			static bool decodeSystemStatusRegister(Register^ sys) {
 				if (sys == nullptr) return false;
 				anodic_test_current_activated = (sys->d0 & 0x1) ? true : false;
-
+				auto_calibration_activated = (sys->d0 & 0x2) ? true : false;
 				
 				return true;
 			}
@@ -41,7 +41,7 @@ public:
 				// Byte 0 of the register
 				sys->d0 = 0;
 				if(anodic_test_current_activated) sys->d0 |= 1;
-				
+				if (auto_calibration_activated) sys->d0 |= 2;
 				
 				// Returns the formatted register
 				return sys;
@@ -75,6 +75,7 @@ public:
 			
 			// mAsmeter related parameters
 			static bool			   anodic_test_current_activated = false;
+			static bool				auto_calibration_activated = false;
 			static unsigned short  anodic_test_current = 0;
 			static unsigned short  mas_test_pulses = 0;
 
@@ -120,8 +121,35 @@ public:
 
 			enum class register_index {
 				
-				NUM_REGISTERS = 0
+				MAS_PARAM_IDX = 0,
 			};
+
+
+			Register^ encodeMasParamRegister(void) {
+
+				// Creates a register with all bytes set to 0
+				CanDeviceProtocol::Register^ sys = gcnew CanDeviceProtocol::Register;
+
+				sys->d0 = calibrated_pulses;
+				sys->d1 = calibrated_pulses >> 8;
+				sys->d2 = calibrated_anodic_current;
+				sys->d3 = calibrated_integration_time_10ms;
+				
+				return sys;
+			}
+
+			static bool decodeMasParamRegister(Register^ sys) {
+				if (sys == nullptr) return false;
+
+				calibrated_pulses = (unsigned short)sys->d0 + (unsigned short)256 * sys->d1;
+				calibrated_anodic_current = sys->d2;
+				calibrated_integration_time_10ms = sys->d3;
+				return true;
+			}
+
+			static unsigned short calibrated_pulses;
+			static unsigned char  calibrated_integration_time_10ms;
+			static unsigned char  calibrated_anodic_current;
 
 		};
 
@@ -129,17 +157,14 @@ public:
 		public:
 			enum class command_index {
 				ABORT_COMMAND = 0, //!< Abort Command (mandatory as for device protocol)
-				
+				CMD_MAS_AUTO_CALIBRATION
 			};
 
-			/* EXAMPLE
-			CanDeviceCommand^ encodeSetFormatCommand(unsigned char target_format_slot) {
-				// if the index is out of range, the collimatin will be st to OPEN in the device
-				if (target_format_slot >= NUM_COLLIMATION_SLOTS) target_format_slot = 0;
-				return gcnew CanDeviceCommand((unsigned char)command_index::SET_FORMAT, target_format_slot, 0, 0, 0);
-			}*/
+			CanDeviceCommand^ encodeActivateAutocalibration(void) {
+				return gcnew CanDeviceCommand((unsigned char)command_index::CMD_MAS_AUTO_CALIBRATION, 0, 0, 0, 0);
+			}
 
-
+			
 		};
 
 		static StatusRegister status_register;
@@ -196,9 +221,16 @@ public:
 	///@{
 	static bool activateMasTestCurrent(bool stat);
 	static bool getMasTestCurrentStatus(void);
-	static unsigned short getMasCalibPulses(void);
-	static unsigned short getMasCalibCurrent(void);
+	static bool getMasAutocalibrationStatus(void);
+
+	static unsigned short getMasTestPulses(void);
+	static unsigned short getMasTestCurrent(void);
 	
+
+	static unsigned char  getMasCalibCurrent(void);
+	static unsigned char  getMasCalib10msTime(void);
+	static unsigned short getMasCalibPulses(void);
+	static bool			  ExecuteAutoCalbration(void);
 	///@}
 };
 

@@ -557,6 +557,23 @@ CanDeviceProtocol::Register^ CanDeviceProtocol::readStatusRegister(unsigned char
 CanDeviceProtocol::Register^ CanDeviceProtocol::readDataRegister(unsigned char index) {
     return nullptr;
 }
+
+CanDeviceProtocol::Register^ CanDeviceProtocol::readParamRegister(unsigned char index) {
+    if (!send(
+        (System::Byte)0, // Internally set to the sequence number
+        (System::Byte)ProtocolFrameCode::FRAME_READ_PARAM, // Frame code
+        (System::Byte)index, // Status register index
+        (System::Byte)0, // d0
+        (System::Byte)0, // D1
+        (System::Byte)0, // D2 
+        (System::Byte)0, // D3
+        (System::Byte)0, // CRC internally set
+        false)// Bootloader == true, Application = false
+        ) return nullptr;
+
+    return gcnew Register(getRxRegister()->b3, getRxRegister()->b4, getRxRegister()->b5, getRxRegister()->b6);
+}
+
 bool CanDeviceProtocol::writeParamRegister(unsigned char index, unsigned char d0, unsigned char d1, unsigned char d2, unsigned char d3) {
     return send(
         (System::Byte)0, // Internally set to the sequence number
