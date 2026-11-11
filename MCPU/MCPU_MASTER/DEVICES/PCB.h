@@ -29,6 +29,7 @@ public:
 				if (sys == nullptr) return false;
 				anodic_test_current_activated = (sys->d0 & 0x1) ? true : false;
 				auto_calibration_activated = (sys->d0 & 0x2) ? true : false;
+				manual_calibration_activated = (sys->d0 & 0x4) ? true : false;
 				
 				return true;
 			}
@@ -42,6 +43,7 @@ public:
 				sys->d0 = 0;
 				if(anodic_test_current_activated) sys->d0 |= 1;
 				if (auto_calibration_activated) sys->d0 |= 2;
+				if (manual_calibration_activated) sys->d0 |= 4;
 				
 				// Returns the formatted register
 				return sys;
@@ -75,7 +77,8 @@ public:
 			
 			// mAsmeter related parameters
 			static bool			   anodic_test_current_activated = false;
-			static bool				auto_calibration_activated = false;
+			static bool			   auto_calibration_activated = false;
+			static bool			   manual_calibration_activated = false;
 			static unsigned short  anodic_test_current = 0;
 			static unsigned short  mas_test_pulses = 0;
 
@@ -153,15 +156,44 @@ public:
 
 		};
 
+		/// <summary>
+		/// This is the Prototcol command implementation section.
+		/// </summary>
+		/// 
+		/// The \ref command_index enumeration defines the implemented command codes.
+		/// 
+		/// Every command is provided with the encoding function to fill the \ref CanDeviceCommand structure
+		/// with the data to execute the related command.
+		/// 
+		/// \**Usage Example**\
+		/// 
+		/// + device->commandNoWaitCompletion(protocol.command.encode_xxx(parameters), 30));
+		/// + device->commandWaitCompletion(protocol.command.encode_xxx(parameters), 30));
+		/// 
+		/// + The first call version sends the command without waiting the command execution event.
+		/// + The second call version sends the command waiting for the command completion. 
+		/// 
+		/// Note: The secnd version can only be used by a different thread than the this device thread.
+		/// 		
 		ref class Commands {
 		public:
 			enum class command_index {
-				ABORT_COMMAND = 0, //!< Abort Command (mandatory as for device protocol)
-				CMD_MAS_AUTO_CALIBRATION
+				ABORT_COMMAND = 0,			//!< Abort Command (mandatory as for device protocol)
+				CMD_MAS_AUTO_CALIBRATION,	//!< Automatic Masmeter calibration 
+				CMD_MAS_MANUAL_CALIBRATION,	//!< Manual Masmeter calibration 
 			};
 
+			/// <summary>
+			/// This is the Command encoding function to build the Auto Calibration Command execution
+			/// </summary>
+			/// <param name=""></param>
+			/// <returns></returns>
 			CanDeviceCommand^ encodeActivateAutocalibration(void) {
 				return gcnew CanDeviceCommand((unsigned char)command_index::CMD_MAS_AUTO_CALIBRATION, 0, 0, 0, 0);
+			}
+
+			CanDeviceCommand^ encodeActivateManualcalibration(unsigned char val) {
+				return gcnew CanDeviceCommand((unsigned char)command_index::CMD_MAS_MANUAL_CALIBRATION,(BYTE) val, 0, 0, 0);
 			}
 
 			
@@ -221,7 +253,8 @@ public:
 	///@{
 	static bool activateMasTestCurrent(bool stat);
 	static bool getMasTestCurrentStatus(void);
-	static bool getMasAutocalibrationStatus(void);
+	static bool getMasAutoCalibrationStatus(void);
+	static bool getMasManualCalibrationStatus(void);
 
 	static unsigned short getMasTestPulses(void);
 	static unsigned short getMasTestCurrent(void);
@@ -230,7 +263,10 @@ public:
 	static unsigned char  getMasCalibCurrent(void);
 	static unsigned char  getMasCalib10msTime(void);
 	static unsigned short getMasCalibPulses(void);
+
+	// Command execution
 	static bool			  ExecuteAutoCalbration(void);
+	static bool			  ExecuteManualCalibration(int ma);
 	///@}
 };
 

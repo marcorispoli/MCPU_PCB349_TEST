@@ -1,0 +1,12 @@
+[0][12h:12m:15s:534] SELECTED MONITOR: X0 = 0, Y0 = 0
+[382][12h:12m:15s:916] PROGRAM INITIALIZATION
+[305][12h:12m:16s:221] CAN OPEN ATTEMPT: 0
+[662][12h:12m:16s:882] DRIVER OPEN
+[7][12h:12m:16s:890] VSCAN API: 1.10.3
+[632][12h:12m:17s:522] VSCAN HARDWARE:  SN=380110799 HwREV=1.1 SwREV=2.1 TYPE=2
+[1587][12h:12m:19s:109] VSCAN DRIVER READY
+[82][12h:12m:19s:191] can driver revision:  API:1.10 SW:2.1 HW:1.1
+[133][12h:12m:19s:324] Device Board <25>: thread started: wait run command
+[33][12h:12m:19s:356] pcb initialization ..
+[85][12h:12m:19s:441] Device Board <25>: Module Normal mode
+[0][12h:12m:19s:442] Device Board <25>: Wait Revision

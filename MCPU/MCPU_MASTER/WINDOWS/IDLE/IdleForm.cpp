@@ -136,8 +136,12 @@ void IdleForm::idleStatusManagement(void) {
 	
 	labelTime->Text = date.Hour + ":" + date.Minute + ":" + date.Second;
 
-	if (PCB::getMasAutocalibrationStatus()) {
-		CalibrationCurrentOnOff->Text = "CAL";
+	if (PCB::getMasAutoCalibrationStatus()) {
+		CalibrationCurrentOnOff->Text = "ACAL";
+		mAsFreqValue->Text = "----";
+		AnodicCurrentValue->Text = "----";
+	}else if (PCB::getMasManualCalibrationStatus()) {
+		CalibrationCurrentOnOff->Text = "MCAL";
 		mAsFreqValue->Text = "----";
 		AnodicCurrentValue->Text = "----";
 	}
@@ -156,6 +160,7 @@ void IdleForm::idleStatusManagement(void) {
 		}
 
 	}
+
 	CalibtrationCurrentValue->Text = "" + PCB::getMasCalibCurrent();
 	CalibrationTimeValue->Text = "" + (PCB::getMasCalib10msTime()* 10);
 	CalibrationPulsesValue->Text = "" + PCB::getMasCalibPulses();
@@ -209,4 +214,8 @@ System::Void IdleForm::CalibrationCurrentActivationButton_Click(System::Object^ 
 
 System::Void IdleForm::AutoCalibrationButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	PCB::ExecuteAutoCalbration();
+}
+
+System::Void IdleForm::ManualAnodicCalibrationButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	PCB::ExecuteManualCalibration((int) ManualAnodicCalibrationValue->Value);
 }

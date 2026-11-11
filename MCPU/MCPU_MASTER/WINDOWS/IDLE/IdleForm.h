@@ -147,9 +147,13 @@ private:
 		this->labelDate = (gcnew System::Windows::Forms::Label());
 		this->labelTime = (gcnew System::Windows::Forms::Label());
 		this->mainPanel = (gcnew System::Windows::Forms::Panel());
-		this->CalibrationCurrentOnOff = (gcnew System::Windows::Forms::Label());
 		this->BoardTestLabel = (gcnew System::Windows::Forms::Label());
 		this->mAsPanel = (gcnew System::Windows::Forms::Panel());
+		this->CalibrationCurrentOnOff = (gcnew System::Windows::Forms::Label());
+		this->label5 = (gcnew System::Windows::Forms::Label());
+		this->CalibrationPulsesValue = (gcnew System::Windows::Forms::Label());
+		this->label2 = (gcnew System::Windows::Forms::Label());
+		this->CalibrationTimeValue = (gcnew System::Windows::Forms::Label());
 		this->CalibrationCurrentActivationButton = (gcnew System::Windows::Forms::Button());
 		this->label4 = (gcnew System::Windows::Forms::Label());
 		this->label3 = (gcnew System::Windows::Forms::Label());
@@ -164,10 +168,6 @@ private:
 		this->label6 = (gcnew System::Windows::Forms::Label());
 		this->mAsFreqValue = (gcnew System::Windows::Forms::Label());
 		this->QuitButton = (gcnew System::Windows::Forms::PictureBox());
-		this->label2 = (gcnew System::Windows::Forms::Label());
-		this->CalibrationTimeValue = (gcnew System::Windows::Forms::Label());
-		this->label5 = (gcnew System::Windows::Forms::Label());
-		this->CalibrationPulsesValue = (gcnew System::Windows::Forms::Label());
 		this->mainPanel->SuspendLayout();
 		this->mAsPanel->SuspendLayout();
 		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ManualAnodicCalibrationValue))->BeginInit();
@@ -209,19 +209,6 @@ private:
 		this->mainPanel->Size = System::Drawing::Size(599, 800);
 		this->mainPanel->TabIndex = 14;
 		// 
-		// CalibrationCurrentOnOff
-		// 
-		this->CalibrationCurrentOnOff->BackColor = System::Drawing::Color::Maroon;
-		this->CalibrationCurrentOnOff->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->CalibrationCurrentOnOff->ForeColor = System::Drawing::Color::White;
-		this->CalibrationCurrentOnOff->Location = System::Drawing::Point(203, 36);
-		this->CalibrationCurrentOnOff->Name = L"CalibrationCurrentOnOff";
-		this->CalibrationCurrentOnOff->Size = System::Drawing::Size(40, 32);
-		this->CalibrationCurrentOnOff->TabIndex = 25;
-		this->CalibrationCurrentOnOff->Text = L"OFF";
-		this->CalibrationCurrentOnOff->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-		// 
 		// BoardTestLabel
 		// 
 		this->BoardTestLabel->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -260,6 +247,67 @@ private:
 		this->mAsPanel->Name = L"mAsPanel";
 		this->mAsPanel->Size = System::Drawing::Size(254, 348);
 		this->mAsPanel->TabIndex = 14;
+		// 
+		// CalibrationCurrentOnOff
+		// 
+		this->CalibrationCurrentOnOff->BackColor = System::Drawing::Color::Maroon;
+		this->CalibrationCurrentOnOff->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->CalibrationCurrentOnOff->ForeColor = System::Drawing::Color::White;
+		this->CalibrationCurrentOnOff->Location = System::Drawing::Point(203, 36);
+		this->CalibrationCurrentOnOff->Name = L"CalibrationCurrentOnOff";
+		this->CalibrationCurrentOnOff->Size = System::Drawing::Size(40, 32);
+		this->CalibrationCurrentOnOff->TabIndex = 25;
+		this->CalibrationCurrentOnOff->Text = L"OFF";
+		this->CalibrationCurrentOnOff->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+		// 
+		// label5
+		// 
+		this->label5->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->label5->ForeColor = System::Drawing::Color::Aqua;
+		this->label5->Location = System::Drawing::Point(3, 167);
+		this->label5->Name = L"label5";
+		this->label5->Size = System::Drawing::Size(193, 24);
+		this->label5->TabIndex = 28;
+		this->label5->Text = L"Calibration Pulses";
+		this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+		// 
+		// CalibrationPulsesValue
+		// 
+		this->CalibrationPulsesValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->CalibrationPulsesValue->ForeColor = System::Drawing::Color::White;
+		this->CalibrationPulsesValue->Location = System::Drawing::Point(171, 167);
+		this->CalibrationPulsesValue->Name = L"CalibrationPulsesValue";
+		this->CalibrationPulsesValue->Size = System::Drawing::Size(72, 24);
+		this->CalibrationPulsesValue->TabIndex = 27;
+		this->CalibrationPulsesValue->Text = L"----";
+		this->CalibrationPulsesValue->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+		// 
+		// label2
+		// 
+		this->label2->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->label2->ForeColor = System::Drawing::Color::Aqua;
+		this->label2->Location = System::Drawing::Point(3, 143);
+		this->label2->Name = L"label2";
+		this->label2->Size = System::Drawing::Size(193, 24);
+		this->label2->TabIndex = 26;
+		this->label2->Text = L"Calibration Time (ms)";
+		this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+		// 
+		// CalibrationTimeValue
+		// 
+		this->CalibrationTimeValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			static_cast<System::Byte>(0)));
+		this->CalibrationTimeValue->ForeColor = System::Drawing::Color::White;
+		this->CalibrationTimeValue->Location = System::Drawing::Point(171, 143);
+		this->CalibrationTimeValue->Name = L"CalibrationTimeValue";
+		this->CalibrationTimeValue->Size = System::Drawing::Size(72, 24);
+		this->CalibrationTimeValue->TabIndex = 25;
+		this->CalibrationTimeValue->Text = L"----";
+		this->CalibrationTimeValue->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 		// 
 		// CalibrationCurrentActivationButton
 		// 
@@ -333,6 +381,7 @@ private:
 		this->ManualAnodicCalibrationButton->TabIndex = 19;
 		this->ManualAnodicCalibrationButton->Text = L"MANUAL CAL.";
 		this->ManualAnodicCalibrationButton->UseVisualStyleBackColor = true;
+		this->ManualAnodicCalibrationButton->Click += gcnew System::EventHandler(this, &IdleForm::ManualAnodicCalibrationButton_Click);
 		// 
 		// label1
 		// 
@@ -432,54 +481,6 @@ private:
 		this->QuitButton->TabStop = false;
 		this->QuitButton->Click += gcnew System::EventHandler(this, &IdleForm::QuitButton_Click);
 		// 
-		// label2
-		// 
-		this->label2->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->label2->ForeColor = System::Drawing::Color::Aqua;
-		this->label2->Location = System::Drawing::Point(3, 143);
-		this->label2->Name = L"label2";
-		this->label2->Size = System::Drawing::Size(193, 24);
-		this->label2->TabIndex = 26;
-		this->label2->Text = L"Calibration Time (ms)";
-		this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-		// 
-		// CalibrationTimeValue
-		// 
-		this->CalibrationTimeValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->CalibrationTimeValue->ForeColor = System::Drawing::Color::White;
-		this->CalibrationTimeValue->Location = System::Drawing::Point(171, 143);
-		this->CalibrationTimeValue->Name = L"CalibrationTimeValue";
-		this->CalibrationTimeValue->Size = System::Drawing::Size(72, 24);
-		this->CalibrationTimeValue->TabIndex = 25;
-		this->CalibrationTimeValue->Text = L"----";
-		this->CalibrationTimeValue->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-		// 
-		// label5
-		// 
-		this->label5->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->label5->ForeColor = System::Drawing::Color::Aqua;
-		this->label5->Location = System::Drawing::Point(3, 167);
-		this->label5->Name = L"label5";
-		this->label5->Size = System::Drawing::Size(193, 24);
-		this->label5->TabIndex = 28;
-		this->label5->Text = L"Calibration Pulses";
-		this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-		// 
-		// CalibrationPulsesValue
-		// 
-		this->CalibrationPulsesValue->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-			static_cast<System::Byte>(0)));
-		this->CalibrationPulsesValue->ForeColor = System::Drawing::Color::White;
-		this->CalibrationPulsesValue->Location = System::Drawing::Point(171, 167);
-		this->CalibrationPulsesValue->Name = L"CalibrationPulsesValue";
-		this->CalibrationPulsesValue->Size = System::Drawing::Size(72, 24);
-		this->CalibrationPulsesValue->TabIndex = 27;
-		this->CalibrationPulsesValue->Text = L"----";
-		this->CalibrationPulsesValue->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-		// 
 		// IdleForm
 		// 
 		this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(60)),
@@ -519,6 +520,7 @@ private:
 
 	private: System::Void CalibrationCurrentActivationButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void AutoCalibrationButton_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void ManualAnodicCalibrationButton_Click(System::Object^ sender, System::EventArgs^ e);
 
 };
 

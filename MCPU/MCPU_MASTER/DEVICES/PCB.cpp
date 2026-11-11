@@ -12,8 +12,12 @@ bool PCB::activateMasTestCurrent(bool stat) {
 bool PCB::getMasTestCurrentStatus(void) {
     return protocol.status_register.anodic_test_current_activated;
 }
-bool PCB::getMasAutocalibrationStatus(void) {
+bool PCB::getMasAutoCalibrationStatus(void) {
     return protocol.status_register.auto_calibration_activated;
+}
+
+bool PCB::getMasManualCalibrationStatus(void) {
+    return protocol.status_register.manual_calibration_activated;
 }
 
 unsigned short PCB::getMasTestPulses(void) {
@@ -43,6 +47,16 @@ bool PCB::ExecuteAutoCalbration(void) {
 
     return true;
 }
+
+bool PCB::ExecuteManualCalibration(int ma) {
+    if (ma > 255) return false;
+    if (protocol.status_register.manual_calibration_activated) return false;
+    if (protocol.status_register.auto_calibration_activated) return false;
+    if (!device->commandNoWaitCompletion(protocol.command.encodeActivateManualcalibration(ma), 30)) return false;
+
+    return true;
+}
+
 
 void PCB::runningLoop(void) {
     static bool commerr = false;

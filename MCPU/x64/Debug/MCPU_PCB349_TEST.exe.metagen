@@ -1,7 +1,7 @@
   MCPU_MASTER.WINDOWS.IDLE.IdleForm.resources - Embedded, ContainedInManifestFile, 
   MCPU_MASTER.WINDOWS.MAIN.MainForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
-Assembly MCPU_PCB349_TEST, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+Assembly MCPU_PCB349_TEST, Version=1.0.*, Culture=Lingua inglese (non associata ad alcun paese): 
 	hash=SHA1, flags=PublicKey
 Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -40,6 +40,7 @@ Class IdleForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Fields:
     System.Timers.Timer idleTimer : Public
     Boolean open_status : Public
+    System.Windows.Forms.NumericUpDown ManualAnodicCalibrationValue : Public
   Methods:
     idleStatusManagement(): PrivateScope, Public, HideBySig
     initIdleStatus(): PrivateScope, Public, HideBySig
