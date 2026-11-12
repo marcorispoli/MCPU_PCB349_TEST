@@ -12,16 +12,50 @@ bool PCB::activateMasTestCurrent(bool stat) {
 bool PCB::getMasTestCurrentStatus(void) {
     return protocol.status_register.anodic_test_current_activated;
 }
+bool PCB::getMasAutoCalibrationStatus(void) {
+    return protocol.status_register.auto_calibration_activated;
+}
 
-unsigned short PCB::getMasCalibPulses(void) {
+bool PCB::getMasManualCalibrationStatus(void) {
+    return protocol.status_register.manual_calibration_activated;
+}
+
+unsigned short PCB::getMasTestPulses(void) {
     return protocol.status_register.mas_test_pulses;
 }
 
-unsigned short PCB::getMasCalibCurrent(void) {
+unsigned short PCB::getMasTestCurrent(void) {
     return protocol.status_register.anodic_test_current;
 }
 
 
+unsigned char PCB::getMasCalibCurrent(void) {
+    return protocol.parameter_register.calibrated_anodic_current;
+}
+
+unsigned char PCB::getMasCalib10msTime(void) {
+    return protocol.parameter_register.calibrated_integration_time_10ms;
+}
+
+unsigned short PCB::getMasCalibPulses(void) {
+    return protocol.parameter_register.calibrated_pulses;
+}
+
+bool PCB::ExecuteAutoCalbration(void) {
+    if (protocol.status_register.auto_calibration_activated) return false;
+    if (!device->commandNoWaitCompletion(protocol.command.encodeActivateAutocalibration(), 30)) return false;
+
+    return true;
+}
+
+bool PCB::ExecuteManualCalibration(int ma) {
+    if (ma > 255) return false;
+    if (protocol.status_register.manual_calibration_activated) return false;
+    if (protocol.status_register.auto_calibration_activated) return false;
+    if (!device->commandNoWaitCompletion(protocol.command.encodeActivateManualcalibration(ma), 30)) return false;
+
+    return true;
+}
 
 
 void PCB::runningLoop(void) {
@@ -53,6 +87,10 @@ void PCB::runningLoop(void) {
     // Write Data Registers here
     writeDataRegister(  (unsigned char)ProtocolStructure::DataRegister::register_index::SYSTEM_DATA_IDX, protocol.data_register.encodeSystemDataRegister());
     std::this_thread::sleep_for(std::chrono::milliseconds(10));
+
+    // Read The Calibration Register
+    protocol.parameter_register.decodeMasParamRegister(readParamRegister((unsigned char)ProtocolStructure::ParameterRegister::register_index::MAS_PARAM_IDX));
+
 
     return;
 
@@ -87,6 +125,9 @@ void PCB::resetLoop(void) {
 bool PCB::configurationLoop(void) {
     
     LogClass::logInFile("CONFIGURATION EVENT");
+    
+    // Read The Calibration Register
+    protocol.parameter_register.decodeMasParamRegister(readParamRegister((unsigned char)ProtocolStructure::ParameterRegister::register_index::MAS_PARAM_IDX));
 
     return true;
 }

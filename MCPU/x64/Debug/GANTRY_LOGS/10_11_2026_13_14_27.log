@@ -1,0 +1,16 @@
+[0][13h:14m:23s:502] SELECTED MONITOR: X0 = 0, Y0 = 0
+[438][13h:14m:23s:941] PROGRAM INITIALIZATION
+[315][13h:14m:24s:255] CAN OPEN ATTEMPT: 0
+[642][13h:14m:24s:897] DRIVER OPEN
+[0][13h:14m:24s:897] VSCAN API: 1.10.3
+[645][13h:14m:25s:543] VSCAN HARDWARE:  SN=380110799 HwREV=1.1 SwREV=2.1 TYPE=2
+[1591][13h:14m:27s:133] VSCAN DRIVER READY
+[1][13h:14m:27s:135] can driver revision:  API:1.10 SW:2.1 HW:1.1
+[122][13h:14m:27s:256] Device Board <25>: thread started: wait run command
+[35][13h:14m:27s:291] pcb initialization ..
+[82][13h:14m:27s:373] Device Board <25>: Module Normal mode
+[0][13h:14m:27s:373] Device Board <25>: Wait Revision
+[32][13h:14m:27s:404] Device Board <25>: Configuration
+[0][13h:14m:27s:405] CONFIGURATION EVENT
+[28][13h:14m:27s:433] Device Board <25>: Running
+[65][13h:14m:27s:498] pcb firmware revision:  BOOT:BOOTLOADER_NOT_PRESENT, REV:0.0.0 APP:1.0.1

@@ -50,3 +50,7 @@ D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.vcxproj.Assemb
 D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.WINDOWS.IDLE.IdleForm.resources
 D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.WINDOWS.MAIN.MainForm.resources
 D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.vcxproj.GenerateResource.cache
+C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.vcxproj.AssemblyReference.cache
+C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.WINDOWS.IDLE.IdleForm.resources
+C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.WINDOWS.MAIN.MainForm.resources
+C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\x64\Debug\MCPU_MASTER.vcxproj.GenerateResource.cache

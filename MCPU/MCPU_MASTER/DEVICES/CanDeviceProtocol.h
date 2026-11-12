@@ -902,6 +902,15 @@ protected:
 	Register^ readDataRegister(unsigned char index);
 
 	/// <summary>
+	/// This function executes the read of the PARAM register of given INDEX.
+	/// </summary>
+	/// \ingroup dataAccess
+	/// 
+	/// <param name="index">Index of the  target PARAM register</param>
+	/// <returns>The device PARAM PARAM(index) content or nullptr in case of communication error</returns>
+	Register^ readParamRegister(unsigned char index);
+
+	/// <summary>
 	/// This function executes the write of the PARAMETER(index).
 	/// </summary>
 	/// \ingroup dataAccess
