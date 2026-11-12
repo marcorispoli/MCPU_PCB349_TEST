@@ -1,9 +1,36 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: la directory intermedia (x64\Debug\) contiene file condivisi da un altro progetto (MCPU_MASTER.vcxproj, MCPU_TEST_TEMPLATE.vcxproj, MCPU_TEST_PCB349.vcxproj). Tale condizione può comportare un comportamento di pulizia e ricompilazione non corretto.
-  PCB.cpp
-C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(66,15): warning C4244: '=': conversione da 'unsigned short' a 'unsigned char'. Possibile perdita di dati.
-C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(69,15): warning C4244: '=': conversione da 'unsigned short' a 'unsigned char'. Possibile perdita di dati.
-C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(136,15): warning C4244: '=': conversione da 'unsigned short' a 'unsigned char'. Possibile perdita di dati.
-  AssemblyInfo.obj : rilevato modulo MSIL; il collegamento incrementale è disabilitato per MSIL; verrà eseguito il collegamento completo
-  MCPU_MASTER.vcxproj -> C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\x64\Debug\MCPU_PCB349_TEST.exe
-  C:\Users\marco\Documents\Data\Progetti-GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\VSCAN\vs_can_api.dll
-  1 File copiati
+﻿D:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (MCPU_MASTER.vcxproj, MCPU_TEST_TEMPLATE.vcxproj, MCPU_TEST_PCB349.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  IdleForm.cpp
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(67,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
+  
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(70,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
+  
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(142,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
+  
+  MainForm.cpp
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(67,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/MAIN/MainForm.cpp')
+  
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(70,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/MAIN/MainForm.cpp')
+  
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(142,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/MAIN/MainForm.cpp')
+  
+  gantry_global_status.cpp
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(67,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'gantry_global_status.cpp')
+  
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(70,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'gantry_global_status.cpp')
+  
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(142,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'gantry_global_status.cpp')
+  
+  Generating Code...
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  MCPU_MASTER.vcxproj -> D:\GIT\SW\MCPU_PCB349_TEST\MCPU\x64\Debug\MCPU_PCB349_TEST.exe
+  D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\VSCAN\vs_can_api.dll
+  1 File(s) copied

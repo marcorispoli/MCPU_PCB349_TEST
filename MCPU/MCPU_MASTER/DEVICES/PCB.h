@@ -24,12 +24,12 @@ public:
 			};
 
 
-
 			static bool decodeSystemStatusRegister(Register^ sys) {
 				if (sys == nullptr) return false;
-				anodic_test_current_activated = (sys->d0 & 0x1) ? true : false;
-				auto_calibration_activated = (sys->d0 & 0x2) ? true : false;
-				manual_calibration_activated = (sys->d0 & 0x4) ? true : false;
+				mas_monitor_activated = (sys->d0 & 0x1) ? true : false;
+				mas_vref_activated = (sys->d0 & 0x2) ? true : false;
+				mas_auto_calibration_activated = (sys->d0 & 0x4) ? true : false;
+				mas_manual_calibration_activated = (sys->d0 & 0x8) ? true : false;
 				
 				return true;
 			}
@@ -41,18 +41,19 @@ public:
 
 				// Byte 0 of the register
 				sys->d0 = 0;
-				if(anodic_test_current_activated) sys->d0 |= 1;
-				if (auto_calibration_activated) sys->d0 |= 2;
-				if (manual_calibration_activated) sys->d0 |= 4;
-				
+				if(mas_monitor_activated) sys->d0 |= 1;
+				if (mas_vref_activated) sys->d0 |= 2;
+				if (mas_auto_calibration_activated) sys->d0 |= 4;
+				if (mas_manual_calibration_activated) sys->d0 |= 8;
+
 				// Returns the formatted register
 				return sys;
 			}
 
 			static bool decodeMasTestStatusRegister(Register^ sys) {
 				if (sys == nullptr) return false;
-				anodic_test_current = (unsigned short)sys->d0 + (unsigned short)256 * sys->d1;
-				mas_test_pulses = (unsigned short)sys->d2 + (unsigned short)256 * sys->d3;
+				mas_anodic_current = (unsigned short)sys->d0 + (unsigned short)256 * sys->d1;
+				mas_counts = (unsigned short)sys->d2 + (unsigned short)256 * sys->d3;
 
 				return true;
 			}
@@ -63,11 +64,11 @@ public:
 				CanDeviceProtocol::Register^ sys = gcnew CanDeviceProtocol::Register;
 
 				
-				sys->d0 = anodic_test_current;
-				sys->d1 = anodic_test_current>>8;
+				sys->d0 = mas_anodic_current;
+				sys->d1 = mas_anodic_current >>8;
 
-				sys->d2 = mas_test_pulses;
-				sys->d3 = mas_test_pulses >> 8;
+				sys->d2 = mas_counts;
+				sys->d3 = mas_counts >> 8;
 
 
 				// Returns the formatted register
@@ -76,11 +77,13 @@ public:
 
 			
 			// mAsmeter related parameters
-			static bool			   anodic_test_current_activated = false;
-			static bool			   auto_calibration_activated = false;
-			static bool			   manual_calibration_activated = false;
-			static unsigned short  anodic_test_current = 0;
-			static unsigned short  mas_test_pulses = 0;
+			static bool			   mas_monitor_activated = false;
+			static bool			   mas_vref_activated = false;
+			static bool			   mas_auto_calibration_activated = false;
+			static bool			   mas_manual_calibration_activated = false;
+
+			static unsigned short  mas_anodic_current = 0;
+			static unsigned short  mas_counts = 0;
 
 
 			
@@ -101,7 +104,8 @@ public:
 				CanDeviceProtocol::Register^ sys = gcnew CanDeviceProtocol::Register;
 
 				
-				if(activate_mas_test_current) sys->d0 |= 0x1;
+				if(mas_internal_monitor) sys->d0 |= 0x1;
+				if(mas_monitor_with_vref) sys->d0 |= 0x2;
 
 				
 				return sys;
@@ -110,13 +114,15 @@ public:
 			static bool decodeSystemDataRegister(Register^ sys) {
 				if (sys == nullptr) return false;
 				
-				activate_mas_test_current = (sys->d0 & 0x1) ? true : false;
-
+				mas_internal_monitor = (sys->d0 & 0x1) ? true : false;
+				mas_monitor_with_vref = (sys->d0 & 0x2) ? true : false;
 
 				return true;
 			}
 
-			static bool activate_mas_test_current = false;
+			static bool mas_internal_monitor = false;
+			static bool mas_monitor_with_vref = false;
+
 		};
 
 		ref class ParameterRegister {
@@ -251,13 +257,14 @@ public:
 public:
 	/// \ingroup PCB_Interface
 	///@{
-	static bool activateMasTestCurrent(bool stat);
-	static bool getMasTestCurrentStatus(void);
+	static bool setMasMonitor(bool stat, bool use_vref);
+	static bool getMasMonitorStatus(void);
+	static bool getMasVrefStatus(void);
 	static bool getMasAutoCalibrationStatus(void);
 	static bool getMasManualCalibrationStatus(void);
 
-	static unsigned short getMasTestPulses(void);
-	static unsigned short getMasTestCurrent(void);
+	static unsigned short getMasMonitorCounts(void);
+	static unsigned short getMasMonitorCurrent(void);
 	
 
 	static unsigned char  getMasCalibCurrent(void);

@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\DEVICES\\PCB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|solutionrelative:MCPU_MASTER\\DEVICES\\PCB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|solutionrelative:MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|solutionrelative:MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\DEVICES\\PCB.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|solutionrelative:MCPU_MASTER\\DEVICES\\PCB.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8557E6E1-7950-47E4-94D6-39F875BB06AA}|MCPU_MASTER\\MCPU_MASTER.vcxproj|D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,27 +47,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IdleForm.h",
-              "DocumentMoniker": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
-              "RelativeDocumentMoniker": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
-              "ToolTip": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
-              "RelativeToolTip": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAUwLUBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-05T15:26:29.804Z",
+              "Title": "IdleForm.cpp",
+              "DocumentMoniker": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.cpp",
+              "RelativeDocumentMoniker": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.cpp",
+              "ToolTip": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.cpp",
+              "RelativeToolTip": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.cpp",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAAAKgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-12T11:42:27.13Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "IdleForm.h [Design]",
               "DocumentMoniker": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
               "RelativeDocumentMoniker": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
-              "ToolTip": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h [Design]",
-              "RelativeToolTip": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h [Design]",
+              "ToolTip": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h [Design]*",
+              "RelativeToolTip": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-05T15:26:23.657Z",
+              "WhenOpened": "2026-11-12T11:42:05.52Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PCB.cpp",
+              "DocumentMoniker": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\DEVICES\\PCB.cpp",
+              "RelativeDocumentMoniker": "MCPU_MASTER\\DEVICES\\PCB.cpp",
+              "ToolTip": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\DEVICES\\PCB.cpp",
+              "RelativeToolTip": "MCPU_MASTER\\DEVICES\\PCB.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-12T11:29:54.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PCB.h",
+              "DocumentMoniker": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\DEVICES\\PCB.h",
+              "RelativeDocumentMoniker": "MCPU_MASTER\\DEVICES\\PCB.h",
+              "ToolTip": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\DEVICES\\PCB.h",
+              "RelativeToolTip": "MCPU_MASTER\\DEVICES\\PCB.h",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAAAAUBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-12T11:17:05.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IdleForm.h",
+              "DocumentMoniker": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
+              "RelativeDocumentMoniker": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h",
+              "ToolTip": "D:\\GIT\\SW\\MCPU_PCB349_TEST\\MCPU\\MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h*",
+              "RelativeToolTip": "MCPU_MASTER\\WINDOWS\\IDLE\\IdleForm.h*",
+              "ViewState": "AgIAABwCAAAAAAAAAAAIwC0CAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-05T15:26:29.804Z",
+              "EditorCaption": ""
             }
           ]
         }

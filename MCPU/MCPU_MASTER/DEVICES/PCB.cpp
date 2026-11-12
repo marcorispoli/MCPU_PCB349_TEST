@@ -5,27 +5,33 @@
 #include <thread>
 
 
-bool PCB::activateMasTestCurrent(bool stat) {
-    protocol.data_register.activate_mas_test_current = stat;
+bool PCB::setMasMonitor(bool stat, bool use_vref) {
+    protocol.data_register.mas_internal_monitor = stat;
+    protocol.data_register.mas_monitor_with_vref = use_vref;
     return true;
 }
-bool PCB::getMasTestCurrentStatus(void) {
-    return protocol.status_register.anodic_test_current_activated;
+
+bool PCB::getMasMonitorStatus(void) {
+    return protocol.status_register.mas_monitor_activated;
 }
+bool PCB::getMasVrefStatus(void) {
+    return protocol.status_register.mas_vref_activated;
+}
+
 bool PCB::getMasAutoCalibrationStatus(void) {
-    return protocol.status_register.auto_calibration_activated;
+    return protocol.status_register.mas_auto_calibration_activated;
 }
 
 bool PCB::getMasManualCalibrationStatus(void) {
-    return protocol.status_register.manual_calibration_activated;
+    return protocol.status_register.mas_manual_calibration_activated;
 }
 
-unsigned short PCB::getMasTestPulses(void) {
-    return protocol.status_register.mas_test_pulses;
+unsigned short PCB::getMasMonitorCounts(void) {
+    return protocol.status_register.mas_counts;
 }
 
-unsigned short PCB::getMasTestCurrent(void) {
-    return protocol.status_register.anodic_test_current;
+unsigned short PCB::getMasMonitorCurrent(void) {
+    return protocol.status_register.mas_anodic_current;
 }
 
 
@@ -42,7 +48,8 @@ unsigned short PCB::getMasCalibPulses(void) {
 }
 
 bool PCB::ExecuteAutoCalbration(void) {
-    if (protocol.status_register.auto_calibration_activated) return false;
+    if (protocol.status_register.mas_manual_calibration_activated) return false;
+    if (protocol.status_register.mas_auto_calibration_activated) return false;
     if (!device->commandNoWaitCompletion(protocol.command.encodeActivateAutocalibration(), 30)) return false;
 
     return true;
@@ -50,8 +57,8 @@ bool PCB::ExecuteAutoCalbration(void) {
 
 bool PCB::ExecuteManualCalibration(int ma) {
     if (ma > 255) return false;
-    if (protocol.status_register.manual_calibration_activated) return false;
-    if (protocol.status_register.auto_calibration_activated) return false;
+    if (protocol.status_register.mas_manual_calibration_activated) return false;
+    if (protocol.status_register.mas_auto_calibration_activated) return false;
     if (!device->commandNoWaitCompletion(protocol.command.encodeActivateManualcalibration(ma), 30)) return false;
 
     return true;
@@ -78,7 +85,7 @@ void PCB::runningLoop(void) {
     std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
     // Reads the mAs test register only if required
-    if (protocol.status_register.anodic_test_current_activated) {
+    if (getMasMonitorStatus()) {
         protocol.status_register.decodeMasTestStatusRegister(readStatusRegister((unsigned char)ProtocolStructure::StatusRegister::register_index::MAS_TEST_STATUS_IDX));
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }

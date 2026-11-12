@@ -137,28 +137,36 @@ void IdleForm::idleStatusManagement(void) {
 	labelTime->Text = date.Hour + ":" + date.Minute + ":" + date.Second;
 
 	if (PCB::getMasAutoCalibrationStatus()) {
-		CalibrationCurrentOnOff->Text = "ACAL";
+		MonitorOnOff->Text = "ACAL";
 		mAsFreqValue->Text = "----";
 		AnodicCurrentValue->Text = "----";
 	}else if (PCB::getMasManualCalibrationStatus()) {
-		CalibrationCurrentOnOff->Text = "MCAL";
+		MonitorOnOff->Text = "MCAL";
 		mAsFreqValue->Text = "----";
 		AnodicCurrentValue->Text = "----";
 	}
 	else {
 		// Evaluates the status of the mAsmeter panel
-		if (PCB::getMasTestCurrentStatus()) {
-			CalibrationCurrentOnOff->Text = "ON";
-			mAsFreqValue->Text = "" + PCB::getMasTestPulses();
-			AnodicCurrentValue->Text = "" + PCB::getMasTestCurrent();
+		if (PCB::getMasMonitorStatus()) {
+			MonitorOnOff->Text = "ON";
+			mAsFreqValue->Text = "" + PCB::getMasMonitorCounts();
+			AnodicCurrentValue->Text = "" + PCB::getMasMonitorCurrent();
 
 		}
 		else {
-			CalibrationCurrentOnOff->Text = "OFF";
+			MonitorOnOff->Text = "OFF";
 			mAsFreqValue->Text = "----";
 			AnodicCurrentValue->Text = "----";
 		}
 
+	}
+
+	// Evaluate the status of the VREF
+	if (PCB::getMasVrefStatus()) {
+		VrefOnOff->Text = "ON";
+	}
+	else {
+		VrefOnOff->Text = "OFF";
 	}
 
 	CalibtrationCurrentValue->Text = "" + PCB::getMasCalibCurrent();
@@ -206,10 +214,16 @@ void IdleForm::WndProc(System::Windows::Forms::Message% m)
 }
 
 
-System::Void IdleForm::CalibrationCurrentActivationButton_Click(System::Object^ sender, System::EventArgs^ e) {
-
+System::Void IdleForm::MonitorButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	// Toggles the current status of the mas test 
-	PCB::activateMasTestCurrent(!PCB::getMasTestCurrentStatus());
+	PCB::setMasMonitor(!PCB::getMasMonitorStatus(), PCB::getMasVrefStatus());
+}
+
+System::Void IdleForm::VrefButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	// Toggles the current use of the vref 
+	PCB::setMasMonitor(PCB::getMasMonitorStatus(), !PCB::getMasVrefStatus());
 }
 
 System::Void IdleForm::AutoCalibrationButton_Click(System::Object^ sender, System::EventArgs^ e) {
