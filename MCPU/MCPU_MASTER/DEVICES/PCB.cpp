@@ -47,6 +47,16 @@ unsigned short PCB::getMasCalibPulses(void) {
     return protocol.parameter_register.calibrated_pulses;
 }
 
+unsigned short PCB::getDMasIntegrator(void) {
+    return protocol.status_register.dmas_integrated;
+}
+unsigned short PCB::getMasIntegratorTime(void) {
+    return protocol.status_register.mas_integrated_time;
+}
+
+
+
+
 bool PCB::ExecuteAutoCalbration(void) {
     if (protocol.status_register.mas_manual_calibration_activated) return false;
     if (protocol.status_register.mas_auto_calibration_activated) return false;
@@ -63,6 +73,13 @@ bool PCB::ExecuteManualCalibration(int ma) {
 
     return true;
 }
+
+bool PCB::ExecuteIntegratorCommand(int dmas, int tmo_ms) {
+   
+    if (!device->commandNoWaitCompletion(protocol.command.encodeActivateIntegration(dmas, tmo_ms), 30)) return false;
+    return true;
+}
+
 
 
 void PCB::runningLoop(void) {
@@ -84,12 +101,18 @@ void PCB::runningLoop(void) {
     protocol.status_register.decodeSystemStatusRegister(readStatusRegister((unsigned char)ProtocolStructure::StatusRegister::register_index::SYSTEM_STATUS_IDX));
     std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
+
+
     // Reads the mAs test register only if required
     if (getMasMonitorStatus()) {
         protocol.status_register.decodeMasTestStatusRegister(readStatusRegister((unsigned char)ProtocolStructure::StatusRegister::register_index::MAS_TEST_STATUS_IDX));
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
     
+
+    // Read the INtegrator register
+    protocol.status_register.decodeMasIntegratorStatusRegister(readStatusRegister((unsigned char)ProtocolStructure::StatusRegister::register_index::MAS_INTEGRATOR_STATUS_IDX));
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
     // Write Data Registers here
     writeDataRegister(  (unsigned char)ProtocolStructure::DataRegister::register_index::SYSTEM_DATA_IDX, protocol.data_register.encodeSystemDataRegister());

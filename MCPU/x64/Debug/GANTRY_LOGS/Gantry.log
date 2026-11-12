@@ -1,28 +1,25 @@
-[0][12h:52m:10s:163] SELECTED MONITOR: X0 = 0, Y0 = 0
-[188][12h:52m:10s:350] PROGRAM INITIALIZATION
-[272][12h:52m:10s:622] CAN OPEN ATTEMPT: 0
-[365][12h:52m:10s:987] CAN OPEN ATTEMPT: 1
-[356][12h:52m:11s:343] DRIVER OPEN
-[0][12h:52m:11s:344] VSCAN API: 1.10.3
-[356][12h:52m:11s:699] VSCAN HARDWARE:  SN=380109533 HwREV=0.1 SwREV=2.0 TYPE=2
-[562][12h:52m:12s:261] VSCAN DRIVER READY
-[11][12h:52m:12s:272] can driver revision:  API:1.10 SW:2.0 HW:0.1
-[111][12h:52m:12s:383] Device Board <25>: thread started: wait run command
-[26][12h:52m:12s:409] pcb initialization ..
-[74][12h:52m:12s:484] Device Board <25>: Module Normal mode
-[0][12h:52m:12s:484] Device Board <25>: Wait Revision
-[7][12h:52m:12s:491] Device Board <25>: Configuration
-[1][12h:52m:12s:491] CONFIGURATION EVENT
-[5][12h:52m:12s:496] Device Board <25>: Running
-[11][12h:52m:12s:507] pcb firmware revision:  BOOT:BOOTLOADER_NOT_PRESENT, REV:0.0.0 APP:1.0.1
-[143132][12h:54m:35s:639] COMMUNICATION ERROR
-[7022][12h:54m:42s:661] Device Board <25>: Reset Detected
-[0][12h:54m:42s:661] RESET EVENT
-[500][12h:54m:43s:162] Device Board <25>: Wait Revision
-[4][12h:54m:43s:166] Device Board <25>: Configuration
-[0][12h:54m:43s:166] CONFIGURATION EVENT
-[5][12h:54m:43s:171] Device Board <25>: Running
-[501][12h:54m:43s:672] COMMUNICATION OK
-[317470][13h:0m:1s:142] Device Board <25>: Command Immediate Executed
-[261038][13h:4m:22s:179] Device Board <25>: Command Immediate Executed
-[30277][13h:4m:52s:457] Device Board <25>: Command Immediate Executed
+[0][19h:26m:31s:886] SELECTED MONITOR: X0 = 0, Y0 = 0
+[205][19h:26m:32s:90] PROGRAM INITIALIZATION
+[279][19h:26m:32s:369] CAN OPEN ATTEMPT: 0
+[375][19h:26m:32s:745] CAN OPEN ATTEMPT: 1
+[348][19h:26m:33s:92] DRIVER OPEN
+[0][19h:26m:33s:93] VSCAN API: 1.10.3
+[353][19h:26m:33s:445] VSCAN HARDWARE:  SN=380109533 HwREV=0.1 SwREV=2.0 TYPE=2
+[564][19h:26m:34s:10] VSCAN DRIVER READY
+[14][19h:26m:34s:23] can driver revision:  API:1.10 SW:2.0 HW:0.1
+[111][19h:26m:34s:134] Device Board <25>: thread started: wait run command
+[1][19h:26m:34s:135] pcb initialization ..
+[99][19h:26m:34s:235] Device Board <25>: Module Normal mode
+[0][19h:26m:34s:235] Device Board <25>: Wait Revision
+[8][19h:26m:34s:242] Device Board <25>: Configuration
+[0][19h:26m:34s:242] CONFIGURATION EVENT
+[5][19h:26m:34s:247] Device Board <25>: Running
+[11][19h:26m:34s:258] pcb firmware revision:  BOOT:BOOTLOADER_NOT_PRESENT, REV:0.0.0 APP:1.0.1
+[3850][19h:26m:38s:109] Device Board <25>: Command Immediate Executed
+[3415][19h:26m:41s:524] Device Board <25>: Command Immediate Executed
+[9180][19h:26m:50s:704] Device Board <25>: Command Immediate Executed
+[2434][19h:26m:53s:137] Device Board <25>: Command Immediate Executed
+[2934][19h:26m:56s:71] Device Board <25>: Command Immediate Executed
+[2344][19h:26m:58s:416] Device Board <25>: Command Immediate Executed
+[2252][19h:27m:0s:667] Device Board <25>: Command Immediate Executed
+[2254][19h:27m:2s:922] Device Board <25>: Command Immediate Executed

@@ -1,35 +1,21 @@
 ﻿D:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (MCPU_MASTER.vcxproj, MCPU_TEST_TEMPLATE.vcxproj, MCPU_TEST_PCB349.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   IdleForm.cpp
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(67,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(68,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
   (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
   
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(70,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(71,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
   (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
   
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(142,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(93,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
   (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
   
-  MainForm.cpp
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(67,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
-  (compiling source file 'WINDOWS/MAIN/MainForm.cpp')
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(96,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
   
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(70,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
-  (compiling source file 'WINDOWS/MAIN/MainForm.cpp')
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(173,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
+  (compiling source file 'WINDOWS/IDLE/IdleForm.cpp')
   
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(142,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
-  (compiling source file 'WINDOWS/MAIN/MainForm.cpp')
-  
-  gantry_global_status.cpp
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(67,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
-  (compiling source file 'gantry_global_status.cpp')
-  
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(70,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
-  (compiling source file 'gantry_global_status.cpp')
-  
-D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\DEVICES\PCB.h(142,15): warning C4244: '=': conversion from 'unsigned short' to 'unsigned char', possible loss of data
-  (compiling source file 'gantry_global_status.cpp')
-  
-  Generating Code...
+D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\WINDOWS\IDLE\IdleForm.cpp(172,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   MCPU_MASTER.vcxproj -> D:\GIT\SW\MCPU_PCB349_TEST\MCPU\x64\Debug\MCPU_PCB349_TEST.exe
   D:\GIT\SW\MCPU_PCB349_TEST\MCPU\MCPU_MASTER\VSCAN\vs_can_api.dll

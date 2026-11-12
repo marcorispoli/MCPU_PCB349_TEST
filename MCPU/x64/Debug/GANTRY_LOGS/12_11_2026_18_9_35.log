@@ -1,0 +1,44 @@
+[0][18h:2m:41s:270] SELECTED MONITOR: X0 = 0, Y0 = 0
+[194][18h:2m:41s:464] PROGRAM INITIALIZATION
+[270][18h:2m:41s:734] CAN OPEN ATTEMPT: 0
+[375][18h:2m:42s:110] CAN OPEN ATTEMPT: 1
+[358][18h:2m:42s:467] DRIVER OPEN
+[0][18h:2m:42s:467] VSCAN API: 1.10.3
+[354][18h:2m:42s:821] VSCAN HARDWARE:  SN=380109533 HwREV=0.1 SwREV=2.0 TYPE=2
+[563][18h:2m:43s:385] VSCAN DRIVER READY
+[15][18h:2m:43s:399] can driver revision:  API:1.10 SW:2.0 HW:0.1
+[110][18h:2m:43s:510] Device Board <25>: thread started: wait run command
+[28][18h:2m:43s:537] pcb initialization ..
+[74][18h:2m:43s:611] Device Board <25>: Module Normal mode
+[0][18h:2m:43s:611] Device Board <25>: Wait Revision
+[6][18h:2m:43s:618] Device Board <25>: Configuration
+[1][18h:2m:43s:618] CONFIGURATION EVENT
+[5][18h:2m:43s:623] Device Board <25>: Running
+[12][18h:2m:43s:635] pcb firmware revision:  BOOT:BOOTLOADER_NOT_PRESENT, REV:0.0.0 APP:1.0.1
+[14246][18h:2m:57s:882] Device Board <25>: Command Immediate Executed
+[6567][18h:3m:4s:449] Device Board <25>: Command Immediate Executed
+[169731][18h:5m:54s:180] COMMUNICATION ERROR
+[6685][18h:6m:0s:865] Device Board <25>: Reset Detected
+[0][18h:6m:0s:865] RESET EVENT
+[501][18h:6m:1s:365] Device Board <25>: Wait Revision
+[6][18h:6m:1s:371] Device Board <25>: Configuration
+[0][18h:6m:1s:371] CONFIGURATION EVENT
+[6][18h:6m:1s:377] Device Board <25>: Running
+[500][18h:6m:1s:878] COMMUNICATION OK
+[14002][18h:6m:15s:880] Device Board <25>: Command Immediate Executed
+[90993][18h:7m:46s:873] COMMUNICATION ERROR
+[6928][18h:7m:53s:801] Device Board <25>: Reset Detected
+[0][18h:7m:53s:801] RESET EVENT
+[501][18h:7m:54s:301] Device Board <25>: Wait Revision
+[6][18h:7m:54s:307] Device Board <25>: Configuration
+[0][18h:7m:54s:307] CONFIGURATION EVENT
+[6][18h:7m:54s:313] Device Board <25>: Running
+[501][18h:7m:54s:814] COMMUNICATION OK
+[5342][18h:8m:0s:157] Device Board <25>: Command Immediate Executed
+[26495][18h:8m:26s:652] Device Board <25>: Command Immediate Executed
+[21141][18h:8m:47s:793] Device Board <25>: Command Immediate Executed
+[7032][18h:8m:54s:824] Device Board <25>: Command Immediate Executed
+[10179][18h:9m:5s:3] Device Board <25>: Command Immediate Executed
+[8111][18h:9m:13s:115] Device Board <25>: Command Immediate Executed
+[10086][18h:9m:23s:200] Device Board <25>: Command Immediate Executed
+[12017][18h:9m:35s:218] Device Board <25>: Command Immediate Executed

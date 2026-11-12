@@ -1,0 +1,127 @@
+[0][18h:12m:36s:864] SELECTED MONITOR: X0 = 0, Y0 = 0
+[191][18h:12m:37s:56] PROGRAM INITIALIZATION
+[269][18h:12m:37s:324] CAN OPEN ATTEMPT: 0
+[374][18h:12m:37s:699] CAN OPEN ATTEMPT: 1
+[353][18h:12m:38s:52] DRIVER OPEN
+[1][18h:12m:38s:52] VSCAN API: 1.10.3
+[353][18h:12m:38s:405] VSCAN HARDWARE:  SN=380109533 HwREV=0.1 SwREV=2.0 TYPE=2
+[565][18h:12m:38s:971] VSCAN DRIVER READY
+[5][18h:12m:38s:976] can driver revision:  API:1.10 SW:2.0 HW:0.1
+[110][18h:12m:39s:85] Device Board <25>: thread started: wait run command
+[28][18h:12m:39s:113] pcb initialization ..
+[73][18h:12m:39s:187] Device Board <25>: Module Normal mode
+[0][18h:12m:39s:187] Device Board <25>: Wait Revision
+[6][18h:12m:39s:193] Device Board <25>: Configuration
+[1][18h:12m:39s:193] CONFIGURATION EVENT
+[4][18h:12m:39s:198] Device Board <25>: Running
+[13][18h:12m:39s:210] pcb firmware revision:  BOOT:BOOTLOADER_NOT_PRESENT, REV:0.0.0 APP:1.0.1
+[80305][18h:13m:59s:516] Device Board <25>: Command Communication error
+[1][18h:13m:59s:517] COMMUNICATION ERROR
+[71][18h:13m:59s:588] COMMUNICATION OK
+[18733][18h:14m:18s:321] Device Board <25>: Command Immediate Executed
+[117050][18h:16m:15s:371] Device Board <25>: Command Immediate Executed
+[3607][18h:16m:18s:978] Device Board <25>: Command Immediate Executed
+[19062][18h:16m:38s:40] Device Board <25>: Command Immediate Executed
+[4973][18h:16m:43s:13] Device Board <25>: Command Immediate Executed
+[11250][18h:16m:54s:263] Device Board <25>: Command Immediate Executed
+[2952][18h:16m:57s:215] Device Board <25>: Command Immediate Executed
+[404633][18h:23m:41s:848] COMMUNICATION ERROR
+[6738][18h:23m:48s:586] Device Board <25>: Reset Detected
+[0][18h:23m:48s:586] RESET EVENT
+[500][18h:23m:49s:86] Device Board <25>: Wait Revision
+[5][18h:23m:49s:91] Device Board <25>: Configuration
+[0][18h:23m:49s:91] CONFIGURATION EVENT
+[4][18h:23m:49s:95] Device Board <25>: Running
+[501][18h:23m:49s:596] COMMUNICATION OK
+[6777][18h:23m:56s:373] Device Board <25>: Command Immediate Executed
+[33485][18h:24m:29s:858] Device Board <25>: Command Immediate Executed
+[6975][18h:24m:36s:833] Device Board <25>: Command Immediate Executed
+[2802761][19h:11m:19s:594] COMMUNICATION ERROR
+[6832][19h:11m:26s:426] Device Board <25>: Reset Detected
+[0][19h:11m:26s:426] RESET EVENT
+[500][19h:11m:26s:926] Device Board <25>: Wait Revision
+[5][19h:11m:26s:931] Device Board <25>: Configuration
+[0][19h:11m:26s:931] CONFIGURATION EVENT
+[4][19h:11m:26s:935] Device Board <25>: Running
+[501][19h:11m:27s:436] COMMUNICATION OK
+[4991][19h:11m:32s:427] Device Board <25>: Command Immediate Executed
+[3151][19h:11m:35s:578] Device Board <25>: Command Immediate Executed
+[13346][19h:11m:48s:924] Device Board <25>: Command Immediate Executed
+[3274][19h:11m:52s:198] Device Board <25>: Command Immediate Executed
+[61917][19h:12m:54s:115] COMMUNICATION ERROR
+[6828][19h:13m:0s:943] Device Board <25>: Reset Detected
+[0][19h:13m:0s:943] RESET EVENT
+[500][19h:13m:1s:443] Device Board <25>: Wait Revision
+[6][19h:13m:1s:449] Device Board <25>: Configuration
+[0][19h:13m:1s:449] CONFIGURATION EVENT
+[6][19h:13m:1s:455] Device Board <25>: Running
+[501][19h:13m:1s:956] COMMUNICATION OK
+[14451][19h:13m:16s:407] Device Board <25>: Command Immediate Executed
+[2477][19h:13m:18s:884] Device Board <25>: Command Immediate Executed
+[2050][19h:13m:20s:934] Device Board <25>: Command Immediate Executed
+[21935][19h:13m:42s:869] Device Board <25>: Command Immediate Executed
+[38185][19h:14m:21s:54] COMMUNICATION ERROR
+[7019][19h:14m:28s:73] Device Board <25>: Reset Detected
+[0][19h:14m:28s:73] RESET EVENT
+[501][19h:14m:28s:574] Device Board <25>: Wait Revision
+[5][19h:14m:28s:579] Device Board <25>: Configuration
+[0][19h:14m:28s:579] CONFIGURATION EVENT
+[4][19h:14m:28s:583] Device Board <25>: Running
+[500][19h:14m:29s:83] COMMUNICATION OK
+[3868][19h:14m:32s:951] Device Board <25>: Command Immediate Executed
+[57813][19h:15m:30s:764] COMMUNICATION ERROR
+[6736][19h:15m:37s:500] Device Board <25>: Reset Detected
+[0][19h:15m:37s:500] RESET EVENT
+[501][19h:15m:38s:1] Device Board <25>: Wait Revision
+[6][19h:15m:38s:7] Device Board <25>: Configuration
+[0][19h:15m:38s:7] CONFIGURATION EVENT
+[5][19h:15m:38s:12] Device Board <25>: Running
+[501][19h:15m:38s:513] COMMUNICATION OK
+[2306][19h:15m:40s:819] Device Board <25>: Command Immediate Executed
+[3308][19h:15m:44s:127] Device Board <25>: Command Immediate Executed
+[2566][19h:15m:46s:693] Device Board <25>: Command Immediate Executed
+[27820][19h:16m:14s:513] COMMUNICATION ERROR
+[6738][19h:16m:21s:251] Device Board <25>: Reset Detected
+[0][19h:16m:21s:251] RESET EVENT
+[500][19h:16m:21s:751] Device Board <25>: Wait Revision
+[5][19h:16m:21s:756] Device Board <25>: Configuration
+[0][19h:16m:21s:756] CONFIGURATION EVENT
+[3][19h:16m:21s:759] Device Board <25>: Running
+[501][19h:16m:22s:260] COMMUNICATION OK
+[5317][19h:16m:27s:577] Device Board <25>: Command Immediate Executed
+[1742][19h:16m:29s:319] Device Board <25>: Command Immediate Executed
+[45924][19h:17m:15s:243] COMMUNICATION ERROR
+[7023][19h:17m:22s:266] Device Board <25>: Reset Detected
+[0][19h:17m:22s:266] RESET EVENT
+[501][19h:17m:22s:767] Device Board <25>: Wait Revision
+[4][19h:17m:22s:771] Device Board <25>: Configuration
+[0][19h:17m:22s:771] CONFIGURATION EVENT
+[5][19h:17m:22s:776] Device Board <25>: Running
+[500][19h:17m:23s:276] COMMUNICATION OK
+[1545][19h:17m:24s:821] Device Board <25>: Command Immediate Executed
+[62486][19h:18m:27s:307] COMMUNICATION ERROR
+[7023][19h:18m:34s:330] Device Board <25>: Reset Detected
+[0][19h:18m:34s:330] RESET EVENT
+[500][19h:18m:34s:830] Device Board <25>: Wait Revision
+[6][19h:18m:34s:836] Device Board <25>: Configuration
+[0][19h:18m:34s:836] CONFIGURATION EVENT
+[4][19h:18m:34s:840] Device Board <25>: Running
+[501][19h:18m:35s:341] COMMUNICATION OK
+[2135][19h:18m:37s:476] Device Board <25>: Command Immediate Executed
+[7463][19h:18m:44s:939] Device Board <25>: Command Immediate Executed
+[5959][19h:18m:50s:898] Device Board <25>: Command Immediate Executed
+[10562][19h:19m:1s:460] Device Board <25>: Command Immediate Executed
+[6025][19h:19m:7s:485] Device Board <25>: Command Immediate Executed
+[3688][19h:19m:11s:173] Device Board <25>: Command Immediate Executed
+[97675][19h:20m:48s:848] Device Board <25>: Command Immediate Executed
+[205993][19h:24m:14s:841] COMMUNICATION ERROR
+[7021][19h:24m:21s:862] Device Board <25>: Reset Detected
+[0][19h:24m:21s:862] RESET EVENT
+[500][19h:24m:22s:362] Device Board <25>: Wait Revision
+[4][19h:24m:22s:366] Device Board <25>: Configuration
+[0][19h:24m:22s:366] CONFIGURATION EVENT
+[4][19h:24m:22s:370] Device Board <25>: Running
+[501][19h:24m:22s:871] COMMUNICATION OK
+[10250][19h:24m:33s:121] Device Board <25>: Command Immediate Executed
+[12843][19h:24m:45s:964] Device Board <25>: Command Immediate Executed
+[12886][19h:24m:58s:850] Device Board <25>: Command Immediate Executed

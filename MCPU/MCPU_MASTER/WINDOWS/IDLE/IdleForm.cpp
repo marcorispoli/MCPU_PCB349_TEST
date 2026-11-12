@@ -169,6 +169,12 @@ void IdleForm::idleStatusManagement(void) {
 		VrefOnOff->Text = "OFF";
 	}
 
+	float mas = (float)PCB::getDMasIntegrator() / 10.0;
+
+	// Evaluate the Integrator
+	integratedMasValue->Text = "" + mas;
+	integratedTimeValue->Text = "" + PCB::getMasIntegratorTime();
+
 	CalibtrationCurrentValue->Text = "" + PCB::getMasCalibCurrent();
 	CalibrationTimeValue->Text = "" + (PCB::getMasCalib10msTime()* 10);
 	CalibrationPulsesValue->Text = "" + PCB::getMasCalibPulses();
@@ -233,3 +239,8 @@ System::Void IdleForm::AutoCalibrationButton_Click(System::Object^ sender, Syste
 System::Void IdleForm::ManualAnodicCalibrationButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	PCB::ExecuteManualCalibration((int) ManualAnodicCalibrationValue->Value);
 }
+
+System::Void IdleForm::StartIntegratorButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	PCB::ExecuteIntegratorCommand((int)IntegrationMas->Value*10, (int)IntegrationTmo->Value);
+}
+

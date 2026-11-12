@@ -41,6 +41,8 @@ Class IdleForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Timers.Timer idleTimer : Public
     Boolean open_status : Public
     System.Windows.Forms.NumericUpDown ManualAnodicCalibrationValue : Public
+    System.Windows.Forms.NumericUpDown IntegrationMas : Public
+    System.Windows.Forms.NumericUpDown IntegrationTmo : Public
   Methods:
     idleStatusManagement(): PrivateScope, Public, HideBySig
     initIdleStatus(): PrivateScope, Public, HideBySig

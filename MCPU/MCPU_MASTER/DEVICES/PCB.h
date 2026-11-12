@@ -20,6 +20,7 @@ public:
 			enum class register_index {
 				SYSTEM_STATUS_IDX = 0,  
 				MAS_TEST_STATUS_IDX,
+				MAS_INTEGRATOR_STATUS_IDX, //!< This register provides the last integration result
 				NUM_REGISTERS
 			};
 
@@ -75,7 +76,33 @@ public:
 				return sys;
 			}
 
+			static bool decodeMasIntegratorStatusRegister(Register^ sys) {
+				if (sys == nullptr) return false;
+				dmas_integrated = (unsigned short)sys->d0 + (unsigned short)256 * sys->d1;
+				mas_integrated_time = (unsigned short)sys->d2 + (unsigned short)256 * sys->d3;
+
+				return true;
+			}
+
+			Register^ encodeMasIntegratorStatusRegister(void) {
+
+				// Creates a register with all bytes set to 0
+				CanDeviceProtocol::Register^ sys = gcnew CanDeviceProtocol::Register;
+
+
+				sys->d0 = dmas_integrated;
+				sys->d1 = dmas_integrated >> 8;
+
+				sys->d2 = mas_integrated_time;
+				sys->d3 = mas_integrated_time >> 8;
+
+
+				// Returns the formatted register
+				return sys;
+			}
+
 			
+
 			// mAsmeter related parameters
 			static bool			   mas_monitor_activated = false;
 			static bool			   mas_vref_activated = false;
@@ -84,6 +111,10 @@ public:
 
 			static unsigned short  mas_anodic_current = 0;
 			static unsigned short  mas_counts = 0;
+
+			static unsigned short  dmas_integrated = 0;
+			static unsigned short  mas_integrated_time = 0;
+
 
 
 			
@@ -187,6 +218,7 @@ public:
 				ABORT_COMMAND = 0,			//!< Abort Command (mandatory as for device protocol)
 				CMD_MAS_AUTO_CALIBRATION,	//!< Automatic Masmeter calibration 
 				CMD_MAS_MANUAL_CALIBRATION,	//!< Manual Masmeter calibration 
+				CMD_MAS_START_INTEGRATOR,   //!< Execute an Integration session
 			};
 
 			/// <summary>
@@ -200,6 +232,15 @@ public:
 
 			CanDeviceCommand^ encodeActivateManualcalibration(unsigned char val) {
 				return gcnew CanDeviceCommand((unsigned char)command_index::CMD_MAS_MANUAL_CALIBRATION,(BYTE) val, 0, 0, 0);
+			}
+
+			CanDeviceCommand^ encodeActivateIntegration(unsigned short dmas, unsigned short timeout_ms) {
+				BYTE mas_l = (dmas & 0xff);
+				BYTE mas_h = ((dmas >> 8) & 0xff);
+				BYTE t_l = (timeout_ms & 0xff);
+				BYTE t_h = ((timeout_ms >> 8) & 0xff);
+
+				return gcnew CanDeviceCommand((unsigned char)command_index::CMD_MAS_START_INTEGRATOR, mas_l, mas_h, t_l, t_h);
 			}
 
 			
@@ -265,7 +306,9 @@ public:
 
 	static unsigned short getMasMonitorCounts(void);
 	static unsigned short getMasMonitorCurrent(void);
-	
+	static unsigned short getDMasIntegrator(void);
+	static unsigned short getMasIntegratorTime(void);
+
 
 	static unsigned char  getMasCalibCurrent(void);
 	static unsigned char  getMasCalib10msTime(void);
@@ -274,6 +317,7 @@ public:
 	// Command execution
 	static bool			  ExecuteAutoCalbration(void);
 	static bool			  ExecuteManualCalibration(int ma);
+	static bool			  ExecuteIntegratorCommand(int dmas, int tmo_ms);
 	///@}
 };
 
